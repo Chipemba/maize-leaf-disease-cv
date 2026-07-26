@@ -1,7 +1,7 @@
 # Python
 
 __pycache__/
-*.py[cod]
+*.pyc
 .venv/
 .env
 .ipynb_checkpoints/
@@ -9,13 +9,12 @@ __pycache__/
 # Data and model artifacts
 
 data/raw/
-data/interim/
 data/processed/
-models/*.pt
-models/*.pth
-models/*.h5
-models/*.keras
-models/*.onnx
+./models/
+*.pt
+*.pth
+*.h5
+*.onnx
 
 # Results that can be regenerated
 
@@ -24,8 +23,12 @@ wandb/
 mlruns/
 *.log
 
-# OS/editor
 
+# Local outputs
+
+logs/
+wandb/
+mlruns/
 .DS_Store
 Thumbs.db
 .vscode/

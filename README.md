@@ -15,7 +15,7 @@ Primary dataset: Diseases of maize in the field, University of Pretoria.
 Place downloaded data under data/raw/. Raw data is not committed to GitHub.
 
 ## Models
-MAI204 Maize Leaf Disease Detection - GitHub + Weeks 9-12 Implementation Guideline Page 4
+Maize Leaf Disease Detection 
 1. Custom CNN baseline
 2. Transfer learning model such as EfficientNetB0 or ResNet18
 3. Lightweight model such as MobileNetV2
