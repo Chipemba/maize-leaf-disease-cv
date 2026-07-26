@@ -1,0 +1,9 @@
+{
+    "model_size_mb": 42.72468090057373,
+    "total_parameters": 11180616,
+    "trainable_parameters": 11180616,
+    "total_inference_time_seconds": 87.4659779999638,
+    "avg_inference_time_per_image_seconds": 0.24707903389820282,
+    "images_per_second": 4.0472879637857195,
+    "num_images_timed": 354
+}

@@ -21,8 +21,18 @@ Maize Leaf Disease Detection
 3. Lightweight model such as MobileNetV2
 
 ## Reproduce
-pip install -r requirements.txt
-python src/data/prepare_dataset.py --raw data/raw --out data/processed
-python src/training/train.py --config configs/baseline_cnn.yaml
-python src/evaluation/evaluate.py --model models/baseline_cnn.pt
-python src/evaluation/robustness.py --model models/baseline_cnn.pt
+pip install -r requirements.txt  
+python src/data/prepare_dataset.py --raw data/raw --out data/processed  
+python src/training/train.py --config configs/baseline_cnn.yaml  
+python src/evaluation/evaluate.py --model models/baseline_cnn.pt  
+python src/evaluation/robustness.py --model models/baseline_cnn.pt  
+
+#### Run model evaluation:
+
+python src/evaluation/evaluate_model.py --model-name baseline_cnn --checkpoint models/baseline_cnn.pt  
+python src/evaluation/evaluate_model.py --model-name efficientnet_b0 --checkpoint models/efficientnet_b0.pt  
+python src/evaluation/evaluate_model.py --model-name mobilenet_v2 --checkpoint models/mobilenet_v2.pt  
+
+#### Create comparison table:
+
+python src/evaluation/create_comparison_table.py  
