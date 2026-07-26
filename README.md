@@ -36,3 +36,15 @@ python src/evaluation/evaluate_model.py --model-name mobilenet_v2 --checkpoint m
 #### Create comparison table:
 
 python src/evaluation/create_comparison_table.py  
+
+#### Run robustness experiments:
+
+python src/evaluation/robustness.py  
+
+#### Create robustness ranking:
+
+python src/evaluation/create_robustness_ranking.py  
+
+#### Create final accuracy-efficiency-robustness table:
+
+python src/evaluation/create_final_comparison.py  
