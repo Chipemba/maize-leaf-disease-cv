@@ -1,0 +1,9 @@
+,GLS,NCLB,PLS,CR,SR,NoFoliarSymptoms,Other,UnidentifiedDisease
+GLS,1084,177,135,30,15,8,126,73
+NCLB,177,554,129,86,11,1,62,43
+PLS,135,129,493,67,8,2,57,44
+CR,30,86,67,300,7,2,23,32
+SR,15,11,8,7,39,0,11,1
+NoFoliarSymptoms,8,1,2,2,0,285,37,8
+Other,126,62,57,23,11,37,324,43
+UnidentifiedDisease,73,43,44,32,1,8,43,332
