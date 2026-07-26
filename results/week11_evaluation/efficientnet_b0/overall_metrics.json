@@ -1,0 +1,10 @@
+{
+    "threshold": 0.5,
+    "micro_f1": 0.5729984301412873,
+    "macro_f1": 0.49672223255962594,
+    "weighted_f1": 0.6185083459212422,
+    "hamming_loss": 0.192090395480226,
+    "exact_match_ratio": 0.2514124293785311,
+    "num_test_images": 354,
+    "num_labels": 8
+}
