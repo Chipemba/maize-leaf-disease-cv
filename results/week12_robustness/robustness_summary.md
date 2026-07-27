@@ -19,6 +19,7 @@ The largest Macro F1 drop was observed for baseline_cnn under brightness_high wi
 
 ## Average Macro F1 Drop by Model
 - efficientnet_b0: -0.0023
+- resnet18: 0.0022
 - mobilenet_v2: 0.0076
 - baseline_cnn: 0.0149
 

@@ -1,34 +1,31 @@
-# Python
+# Raw and generated data
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
 
+# Model artifacts
+models/*
+!models/.gitkeep
+*.pt
+*.pth
+*.h5
+*.onnx
+
+# Python
 __pycache__/
 *.pyc
 .venv/
 .env
 .ipynb_checkpoints/
 
-# Data and model artifacts
-
-data/raw/
-data/processed/
-./models/
-*.pt
-*.pth
-*.h5
-*.onnx
-
-# Results that can be regenerated
-
+# Experiment logs
 runs/
 wandb/
 mlruns/
 *.log
 
-
-# Local outputs
-
-logs/
-wandb/
-mlruns/
+# OS/editor files
 .DS_Store
 Thumbs.db
 .vscode/
