@@ -17,6 +17,7 @@ robustness than larger transfer learning models?
 Raw image data is not committed to GitHub. After downloading the dataset, place files like this:  
 
 
+```text
 data/
 ├── raw/
 │   ├── Database.csv
@@ -28,8 +29,8 @@ data/
 ├── splits/
 │   ├── train.csv
 │   ├── val.csv
-│   └── test.csv
-
+│   └── test.csv  
+```
 Primary dataset: Diseases of maize in the field, University of Pretoria.  
 
 
