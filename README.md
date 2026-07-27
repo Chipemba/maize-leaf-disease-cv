@@ -11,8 +11,27 @@ field images with acceptable accuracy while offering better computational effici
 robustness than larger transfer learning models?
 
 ## Dataset
-Primary dataset: Diseases of maize in the field, University of Pretoria.
-Place downloaded data under data/raw/. Raw data is not committed to GitHub.
+
+### Local Dataset Layout
+
+Raw image data is not committed to GitHub. After downloading the dataset, place files like this:  
+
+
+data/
+├── raw/
+│   ├── Database.csv
+│   └── static/
+│       └── leaf_images/
+│           ├── image_1.jpg
+│           ├── image_2.jpg
+│           └── ...
+├── splits/
+│   ├── train.csv
+│   ├── val.csv
+│   └── test.csv
+
+Primary dataset: Diseases of maize in the field, University of Pretoria.  
+
 
 ## Models
 Maize Leaf Disease Detection 
@@ -21,11 +40,43 @@ Maize Leaf Disease Detection
 3. Lightweight model such as MobileNetV2
 
 ## Reproduce
+
+### Install dependencies:
+
 pip install -r requirements.txt  
-python src/data/prepare_dataset.py --raw data/raw --out data/processed  
-python src/training/train.py --config configs/baseline_cnn.yaml  
-python src/evaluation/evaluate.py --model models/baseline_cnn.pt  
-python src/evaluation/robustness.py --model models/baseline_cnn.pt  
+
+### Place the downloaded dataset locally:
+
+data/raw/Database.csv  
+data/raw/static/leaf_images/  
+
+### Run dataset checks:
+
+python src/data/validate_paths.py  
+python src/data/eda.py  
+python src/data/split_data.py  
+python src/training/train_baseline.py  
+python src/evaluation/evaluate_baseline.py  
+
+### Run Week 10 model training:
+
+python src/training/train_model.py --config configs/efficientnet_b0_config.yaml  
+python src/training/train_model.py --config configs/mobilenet_v2_config.yaml  
+python src/training/train_model.py --config configs/resnet18_config.yaml  
+
+### Run Week 11 evaluation:
+
+python src/evaluation/evaluate_model.py --model-name baseline_cnn --checkpoint models/baseline_cnn.pt  
+python src/evaluation/evaluate_model.py --model-name efficientnet_b0 --checkpoint models/efficientnet_b0.pt  
+python src/evaluation/evaluate_model.py --model-name mobilenet_v2 --checkpoint models/mobilenet_v2.pt  
+python src/evaluation/evaluate_model.py --model-name resnet18 --checkpoint models/resnet18.pt  
+python src/evaluation/create_comparison_table.py
+
+### Run Week 12 robustness experiments:
+
+python src/evaluation/robustness.py  
+python src/evaluation/create_robustness_ranking.py  
+python src/evaluation/create_final_comparison.py  
 
 #### Run model evaluation:
 
@@ -36,15 +87,3 @@ python src/evaluation/evaluate_model.py --model-name mobilenet_v2 --checkpoint m
 #### Create comparison table:
 
 python src/evaluation/create_comparison_table.py  
-
-#### Run robustness experiments:
-
-python src/evaluation/robustness.py  
-
-#### Create robustness ranking:
-
-python src/evaluation/create_robustness_ranking.py  
-
-#### Create final accuracy-efficiency-robustness table:
-
-python src/evaluation/create_final_comparison.py  

@@ -54,6 +54,7 @@ MODELS = {
     "baseline_cnn": "models/baseline_cnn.pt",
     "efficientnet_b0": "models/efficientnet_b0.pt",
     "mobilenet_v2": "models/mobilenet_v2.pt",
+    "resnet18": "models/resnet18.pt",
 }
 
 DISTORTIONS = [
