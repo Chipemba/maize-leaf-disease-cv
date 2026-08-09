@@ -132,7 +132,14 @@ Baseline CNN is weakest but useful as reference.
 Robustness was tested with brightness, contrast, blur, and rotation.
 External ONNX demo images are qualitative only.
 
-
 ## Deployment Demo Addition
 
-A lightweight ONNX demo was added using the MobileNetV2 model. The demo allows a user to upload a maize leaf image and view eight independent disease or condition probabilities. External maize/corn leaf images are used for qualitative demonstration only and are not treated as formal external validation.
+A lightweight ONNX demo was added using the MobileNetV2 model. The demo allows a user to upload a maize leaf image and view eight independent disease or condition probabilities using ONNX Runtime and Streamlit.
+
+External maize/corn leaf images are used for qualitative demonstration only and are not treated as formal external validation.
+
+## Split Strategy Limitation
+
+The current train, validation and test split uses a fixed random seed for reproducibility. However, the split does not use iterative multi-label stratification.
+
+This is a limitation because rare labels and label combinations may not be perfectly balanced across the train, validation, and test sets. Future work should use iterative multi-label stratification to better preserve multi-label distributions across splits.

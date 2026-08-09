@@ -90,6 +90,40 @@ python src/evaluation/evaluate_model.py --model-name mobilenet_v2 --checkpoint m
 python src/evaluation/create_comparison_table.py  
 
 
+## Results Summary
+
+The project compares models across clean test performance, efficiency, and robustness.
+
+Key findings:
+
+- MobileNetV2 achieved the best Macro F1 score at approximately 0.508.
+- EfficientNet-B0 achieved the best Micro F1 score at approximately 0.573.
+- MobileNetV2 was the smallest practical model at approximately 8.75 MB.
+- MobileNetV2 had the fastest throughput at approximately 5.18 images per second.
+- EfficientNet-B0 remained competitive for overall prediction performance and robustness.
+- The baseline CNN provided a useful reference point but was weaker overall.
+
+Overall, MobileNetV2 is the strongest practical candidate because it provides the best balance between clean Macro F1, model size, and inference speed.
+
+## Robustness Summary
+
+Robustness was evaluated by applying controlled image distortions to the test set.
+
+The distortions included:
+
+- brightness decrease
+- brightness increase
+- contrast decrease
+- contrast increase
+- mild blur
+- strong blur
+- left rotation
+- right rotation
+
+Macro F1 drop from clean test performance was used to measure model stability. A smaller drop indicates that the model is less sensitive to field-like image variation.
+
+The robustness analysis supports the project goal of evaluating not only clean accuracy, but also how models behave when image quality becomes less ideal.
+
 ## ONNX Live Demo
 
 
@@ -146,41 +180,11 @@ Suggested mapping:
 
 External images are used for qualitative demonstration only because the external label names do not fully match the original eight-label training setup.
 
-## Results Summary
-
-The project compares models across clean test performance, efficiency, and robustness.
-
-Key findings:
-
-- MobileNetV2 achieved the best Macro F1 score at approximately 0.508.
-- EfficientNet-B0 achieved the best Micro F1 score at approximately 0.573.
-- MobileNetV2 was the smallest practical model at approximately 8.75 MB.
-- MobileNetV2 had the fastest throughput at approximately 5.18 images per second.
-- EfficientNet-B0 remained competitive for overall prediction performance and robustness.
-- The baseline CNN provided a useful reference point but was weaker overall.
-
-Overall, MobileNetV2 is the strongest practical candidate because it provides the best balance between clean Macro F1, model size, and inference speed.
-
-## Robustness Summary
-
-Robustness was evaluated by applying controlled image distortions to the test set.
-
-The distortions included:
-
-- brightness decrease
-- brightness increase
-- contrast decrease
-- contrast increase
-- mild blur
-- strong blur
-- left rotation
-- right rotation
-
-Macro F1 drop from clean test performance was used to measure model stability. A smaller drop indicates that the model is less sensitive to field-like image variation.
-
-The robustness results support the project goal of evaluating not only clean accuracy, but also how models behave when image quality becomes less ideal.
 
 
+## Add this section: Limitations
+
+```markdown
 ## Limitations
 
 This project has several limitations:
@@ -189,5 +193,6 @@ This project has several limitations:
 - The labels `Other` and `UnidentifiedDisease` are visually ambiguous and may be harder for the models to learn consistently.
 - Robustness experiments use controlled synthetic distortions rather than a newly collected real-world field test set.
 - External Kaggle images used in the ONNX demo are qualitative examples only and are not treated as formal external validation.
+- The current train, validation and test split uses a fixed random seed for reproducibility, but it does not use iterative multi-label stratification.
 - A fixed threshold may not be optimal for all labels. Future work should explore threshold tuning per label.
 - Mobile or edge-device benchmarking was not completed and remains future work.
