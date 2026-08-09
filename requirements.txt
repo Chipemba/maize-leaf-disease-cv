@@ -1,3 +1,5 @@
+torch
+torchvision
 numpy
 pandas
 matplotlib
@@ -7,5 +9,6 @@ Pillow
 tqdm
 pyyaml
 pytest
-torch
-torchvision
+onnx
+onnxruntime
+streamlit

@@ -124,3 +124,15 @@ EfficientNet-B0 remains a strong alternative when robustness, exact match perfor
 - Evaluate robustness separately for each disease label.
 - Apply targeted augmentation to rare and unstable classes.
 - Test the selected model on images from farms or regions not represented in the training dataset.
+
+
+MobileNetV2 is strongest practical candidate.
+EfficientNet-B0 remains competitive for Micro F1 and robustness.
+Baseline CNN is weakest but useful as reference.
+Robustness was tested with brightness, contrast, blur, and rotation.
+External ONNX demo images are qualitative only.
+
+
+## Deployment Demo Addition
+
+A lightweight ONNX demo was added using the MobileNetV2 model. The demo allows a user to upload a maize leaf image and view eight independent disease or condition probabilities. External maize/corn leaf images are used for qualitative demonstration only and are not treated as formal external validation.
