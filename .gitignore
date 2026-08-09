@@ -1,20 +1,24 @@
 # Raw and generated data
-data/raw/*
+data/raw/
+data/processed/
 !data/raw/.gitkeep
-data/processed/*
 !data/processed/.gitkeep
+external_data/
 
-# Model artifacts
+# Model checkpoints
 models/*
 !models/.gitkeep
 *.pt
 *.pth
 *.h5
-*.onnx
+*.ckpt
+onnx/*.onnx 
 
 # Python
 __pycache__/
 *.pyc
+*.py[cod]
+*$py.class
 .venv/
 .env
 .ipynb_checkpoints/
@@ -28,4 +32,13 @@ mlruns/
 # OS/editor files
 .DS_Store
 Thumbs.db
+
+# IDE files
 .vscode/
+.idea/
+
+# Temporary files
+tmp/
+temp/
+
+.github/
