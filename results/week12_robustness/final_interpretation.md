@@ -119,7 +119,7 @@ EfficientNet-B0 remains a strong alternative when robustness, exact match perfor
 - Test post-training quantization for edge deployment.
 - Compare performance on mobile or CPU-only hardware.
 - Repeat inference measurements on a GPU while reporting the hardware separately.
-- Export MobileNetV2 to ONNX or TorchScript for deployment testing.
+- Extend the completed MobileNetV2 ONNX demo with more field-image testing and hardware-specific benchmarking.
 - Measure memory consumption and energy usage during inference.
 - Evaluate robustness separately for each disease label.
 - Apply targeted augmentation to rare and unstable classes.
@@ -142,4 +142,4 @@ External maize/corn leaf images are used for qualitative demonstration only and 
 
 The current train, validation and test split uses a fixed random seed for reproducibility. However, the split does not use iterative multi-label stratification.
 
-This is a limitation because rare labels and label combinations may not be perfectly balanced across the train, validation, and test sets. Future work should use iterative multi-label stratification to better preserve multi-label distributions across splits.
+This is a limitation because rare labels and label combinations may not be perfectly balanced across the train, validation and test sets. Future work should use iterative multi-label stratification to better preserve multi-label distributions across splits.
