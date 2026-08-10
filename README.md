@@ -11,7 +11,7 @@ field images with acceptable accuracy while offering better computational effici
 robustness than larger transfer learning models?
 
 ## Project Structure
-
+```text
 maize-leaf-disease-cv/
 ├── .github/
 │   └── workflows/              # GitHub Actions CI
