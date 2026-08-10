@@ -136,6 +136,7 @@ The demo allows a user to upload a maize leaf image and receive eight independen
 
 ```bash
 python src/deployment/export_onnx.py
+python src/deployment/check_onnx_output.py
 ```
 
 Expected output:
@@ -180,11 +181,6 @@ Suggested mapping:
 
 External images are used for qualitative demonstration only because the external label names do not fully match the original eight-label training setup.
 
-
-
-## Add this section: Limitations
-
-```markdown
 ## Limitations
 
 This project has several limitations:
@@ -193,6 +189,17 @@ This project has several limitations:
 - The labels `Other` and `UnidentifiedDisease` are visually ambiguous and may be harder for the models to learn consistently.
 - Robustness experiments use controlled synthetic distortions rather than a newly collected real-world field test set.
 - External Kaggle images used in the ONNX demo are qualitative examples only and are not treated as formal external validation.
-- The current train, validation and test split uses a fixed random seed for reproducibility, but it does not use iterative multi-label stratification.
 - A fixed threshold may not be optimal for all labels. Future work should explore threshold tuning per label.
 - Mobile or edge-device benchmarking was not completed and remains future work.
+
+### Split Strategy Limitation
+
+The current train, validation and test split uses a fixed random seed for reproducibility. However, the split does not use iterative multi-label stratification.
+
+This is a limitation because rare labels and label combinations may not be perfectly balanced across the train, validation, and test sets. Future work should use iterative multi-label stratification to better preserve multi-label distributions across splits.
+
+## Deployment Demo Addition
+
+A lightweight ONNX demo was added using the MobileNetV2 model. The demo allows a user to upload a maize leaf image and view eight independent disease or condition probabilities using ONNX Runtime and Streamlit.
+
+External maize/corn leaf images are used for qualitative demonstration only and are not treated as formal external validation.
