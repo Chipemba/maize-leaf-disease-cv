@@ -10,6 +10,37 @@ Can lightweight computer vision models classify maize leaf diseases from Souther
 field images with acceptable accuracy while offering better computational efficiency and
 robustness than larger transfer learning models?
 
+## Project Structure
+
+maize-leaf-disease-cv/
+├── .github/
+│   └── workflows/              # GitHub Actions CI
+├── configs/                    # Model training configurations
+├── data/
+│   ├── raw/                    # Local raw dataset (not committed)
+│   └── splits/                 # Train/validation/test CSV files
+├── demo/
+│   ├── app.py                  # Streamlit ONNX inference demo
+│   └── sample_images/          # Demo images
+├── notebooks/                  # Exploratory notebooks
+├── models/                     # Trained PyTorch checkpoints (local if ignored)
+├── onnx/
+│   └── mobilenet_v2.onnx       # Exported deployment model
+├── presentation/
+│   └── final_demo_screenshots/ # Final presentation/demo evidence
+├── reports/                    # Project reports and documentation
+├── results/                    # Evaluation and robustness outputs
+├── src/
+│   ├── data/                   # Validation, EDA and dataset splitting
+│   ├── models/                 # Model definitions/factory
+│   ├── training/               # Training scripts
+│   ├── evaluation/             # Evaluation, efficiency and robustness
+│   └── deployment/             # ONNX export utilities
+├── tests/                      # Automated tests
+├── README.md
+├── requirements.txt
+└── LICENSE
+
 ## Dataset
 
 ### Local Dataset Layout
